@@ -125,17 +125,17 @@ bima@example.com
 
 ## Halaman Web
 
-| URL | Keterangan |
-| --- | --- |
-| `/login` | Login admin atau anggota |
-| `/admin` | Dashboard admin |
-| `/admin/books` | Manajemen buku |
-| `/admin/members` | Manajemen anggota |
-| `/admin/borrow-requests` | Pengajuan peminjaman |
-| `/admin/borrowings` | Data peminjaman |
-| `/member` | Dashboard anggota |
-| `/member/borrow-request` | Form pengajuan peminjaman |
-| `/member/borrowings` | Riwayat peminjaman anggota |
+| URL                      | Keterangan                 |
+| ------------------------ | -------------------------- |
+| `/login`                 | Login admin atau anggota   |
+| `/admin`                 | Dashboard admin            |
+| `/admin/books`           | Manajemen buku             |
+| `/admin/members`         | Manajemen anggota          |
+| `/admin/borrow-requests` | Pengajuan peminjaman       |
+| `/admin/borrowings`      | Data peminjaman            |
+| `/member`                | Dashboard anggota          |
+| `/member/borrow-request` | Form pengajuan peminjaman  |
+| `/member/borrowings`     | Riwayat peminjaman anggota |
 
 ## ERD
 
@@ -223,23 +223,23 @@ Accept: application/json
 Content-Type: application/json
 ```
 
-| Method | Endpoint | Keterangan |
-| --- | --- | --- |
-| GET | `/api/books` | Ambil semua buku |
-| GET | `/api/books/{code}` | Ambil detail buku berdasarkan kode |
-| POST | `/api/books` | Tambah buku baru |
-| PUT/PATCH | `/api/books/{code}` | Update buku berdasarkan kode |
-| DELETE | `/api/books/{code}` | Hapus buku berdasarkan kode |
+| Method    | Endpoint            | Keterangan                         |
+| --------- | ------------------- | ---------------------------------- |
+| GET       | `/api/books`        | Ambil semua buku                   |
+| GET       | `/api/books/{code}` | Ambil detail buku berdasarkan kode |
+| POST      | `/api/books`        | Tambah buku baru                   |
+| PUT/PATCH | `/api/books/{code}` | Update buku berdasarkan kode       |
+| DELETE    | `/api/books/{code}` | Hapus buku berdasarkan kode        |
 
 Contoh body `POST /api/books`:
 
 ```json
 {
-  "code": "BK013",
-  "title": "Clean Code",
-  "publication_year": 2024,
-  "author": "Robert C. Martin",
-  "stock": 5
+    "code": "BK013",
+    "title": "Clean Code",
+    "publication_year": 2024,
+    "author": "Robert C. Martin",
+    "stock": 5
 }
 ```
 
@@ -247,10 +247,10 @@ Contoh body `PUT /api/books/BK013`:
 
 ```json
 {
-  "title": "Clean Code Edisi Revisi",
-  "publication_year": 2025,
-  "author": "Robert C. Martin",
-  "stock": 8
+    "title": "Clean Code Edisi Revisi",
+    "publication_year": 2025,
+    "author": "Robert C. Martin",
+    "stock": 8
 }
 ```
 
@@ -280,43 +280,3 @@ http://127.0.0.1:3000
 ```
 
 Jika server berjalan di port lain, sesuaikan nilai `base_url`.
-
-## Command Berguna
-
-Melihat daftar route:
-
-```bash
-php artisan route:list
-```
-
-Menjalankan test:
-
-```bash
-php artisan test
-```
-
-Build asset production:
-
-```bash
-npm run build
-```
-
-Reset database local dan isi ulang data demo:
-
-```bash
-php artisan migrate:fresh --seed
-```
-
-## Catatan untuk Windows
-
-Jika perintah `touch database/database.sqlite` tidak tersedia, buat file kosong secara manual di:
-
-```text
-database/database.sqlite
-```
-
-Atau gunakan PowerShell:
-
-```powershell
-New-Item -ItemType File -Path database/database.sqlite -Force
-```
