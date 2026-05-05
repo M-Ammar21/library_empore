@@ -19,10 +19,12 @@ Aplikasi web sederhana untuk mengelola peminjaman buku perpustakaan. Project ini
 
 - PHP 8.3+
 - Laravel
-- SQLite default local database
-- Composer
-- Node.js dan npm
-- Vite
+- Laravel Eloquent ORM
+- Laravel Guard untuk multiauth
+- SQLlite
+- AdminLTE
+- jQuery
+- AJAX
 - Yajra DataTables
 
 ## Instalasi Local
